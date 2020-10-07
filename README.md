@@ -1,1 +1,1 @@
-Welcome to our BAN400 term project. 
+Welcome to our BAN400 term project!
