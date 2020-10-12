@@ -1,5 +1,3 @@
-# This is a test.
-
 # Load Packages -----------------------------------------------------------
 library(readr)
 library(readxl)
@@ -8,44 +6,50 @@ library(dplyr)
 library(tidyverse)
 library(shiny)
 library(shinythemes)
+library(COVID19)
 
 # Load Data ---------------------------------------------------------------
-data <- read_xlsx("https://acleddata.com/download/2909/")
-data2 <- read.csv("https://api.acleddata.com/{data}/{command}.csv")
-
-## If .json-file
-# Give the input file name to the function.
-result <- fromJSON(file = "input.json",
-                   simplify = TRUE)
-# Convert JSON file to a data frame.
-json_data_frame <- as.data.frame(result)
-
+data <- covid19()
 
 # Data Wrangling ----------------------------------------------------------
 
 
 
 # Define UI ---------------------------------------------------------------
-
-# Select type of trend to plot
-
-# Select date range to be plotted
-
-# Select whether to overlay smooth trend line
-
-# Display only if the smoother is checked
-
-# Output: Description, lineplot, and reference
-
+ui <- fluidPage(
+     
+     # Application title
+     titlePanel("Covid"),
+     
+     # Sidebar with a slider input for number of binds
+     sidebarLayout(
+          sidebarPanel(
+               sliderInput("bins",
+                           "Number of bins:",
+                           min = 1,
+                           max = 50,
+                           value = 30)
+          ),
+          
+          # Show a plot of the generated distribution
+          mainPanel(
+               plotOutput("distPlot")
+          )
+     )
+)    
+     
 # Define Server Function --------------------------------------------------
-
-# Subset data
-
-# Create scatterplot object the plotOutput function is expecting
-
-# Pull in description of trend
-
-
+server <- function(input, output) {
+     
+     output$distPlot <- renderPlot({
+          # Generate bins based on input$bins from ui.R
+          x <- covid19()[,2]
+          bins <- seq(min(x),max(x), length.out = input$bins + 1)
+          
+          # draw the histogram with the specified number of bins
+          hist(x, breaks = bins, col = 'darkgray', border = 'white')
+     })
+}
 
 # Create Shiny Object -----------------------------------------------------
-
+shinyApp(ui = ui, server = server)
