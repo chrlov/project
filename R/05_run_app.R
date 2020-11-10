@@ -2,9 +2,11 @@
 library(tidyverse)
 library(shiny)
 library(leaflet)
-library(dplyr)
+library(here)
 
 #### Connect R scripts -------------------------------------------------------
+setwd(here("R"))
+
 source("01_load_raw_data_and_clean.R",
        skip.echo = 2)
 
