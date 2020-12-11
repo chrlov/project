@@ -16,4 +16,5 @@ We have created the folder "R" where we have categorized the different parts of 
 
 The app is available online at the following URL: http://hbratsberg.shinyapps.io/ban400_term_paper
 
-Unfortunately, there are some issues with the online app regarding updating the map under the "Interactive Map" tab. However, the map works when you run the code offline, so it is possible to change variables and time intervals there.
+N.B! If you are running MacOS w/ BigSur and the map doesn't load correctly, see: 
+https://github.com/r-spatial/sf/issues/1536#issuecomment-727342736
