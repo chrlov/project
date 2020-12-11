@@ -2,8 +2,6 @@
 library(tidyverse)
 library(shiny)
 library(leaflet)
-library(selectr) # for deployment to shinyapps.io
-library(rsconnect) # for deployment to shinyapps.io
 
 #### Connect R scripts -------------------------------------------------------
 source(("01_load_raw_data_and_clean.R"),
@@ -19,4 +17,6 @@ source(("04_server.R"),
        skip.echo = 1)
 
 #### App ---------------------------------------------------------------------
-shinyApp(ui = ui, server = server)
+runApp(shinyApp(ui = ui, 
+                server = server),
+       launch.browser = T)
