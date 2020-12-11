@@ -1,7 +1,7 @@
 Welcome to our BAN400 term project!
 
 Project idea:
-Create a shiny app that provides users the ability to visualize crises and conflicts data on a geographical map.
+Create a shiny app that provides users the ability to visualize information about covid-19 regarding testing, confirmed cases, deaths, etc. This will be illustrated through various plots, tables and geographical maps.
 
 Requirements:
 The app must retrieve data from an online source (i.e. use the latest available data).
