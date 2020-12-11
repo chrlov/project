@@ -15,3 +15,5 @@ All functions/code are documented, and the code is written in such a way that ou
 We have created the folder "R" where we have categorized the different parts of the code. This can be run in its entirety in the file app.R. Furthermore, in the folder "Data" you can get insight into the data basis used in the code. This only shows the data at the time the file was downloaded, otherwise this data is updated regularly.
 
 The app is available online at the following URL: http://hbratsberg.shinyapps.io/ban400_term_paper
+
+Unfortunately, there are some issues with the online app regarding updating the map under the "Interactive Map" tab. However, the map works when you run the code offline, so it is possible to change variables and time intervals there.
